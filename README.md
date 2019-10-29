@@ -6,15 +6,15 @@
 在這裡的程式只要是有用到hasNext()，一律變成用0來結束程式。      
 如要使用hasNext()請記得把true替換，本人都有註解在旁邊。   
                   
-### 範例程式EX:
-> 如遇到這種:
+### 範例程式EX：
+> 如遇到這種：
 ```java
 while(true){//on cpe need use in.hasNext()
   int num = in.nextInt();
   if(num==0)break;//jump out
 }
 ```
-> 想使用hasNext()記得替換成:
+> 想使用hasNext()記得替換成：
 ```java
 while(in.hasNext()){
   int num = in.nextInt();
