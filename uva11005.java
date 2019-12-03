@@ -29,7 +29,7 @@ public class uva11005 {
 					System.out.print((sum[j] == min)?" " + (j+2):"");
 				System.out.println();
 			}
-			System.out.println();
+			if(count != cases)System.out.println();
 		}
 		in.close();
 	}
