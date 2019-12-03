@@ -7,6 +7,7 @@ public class uva948 {
 		int count = in.nextInt();
 		for(int casec = 0;casec < count;casec++){
 			int num = in.nextInt();
+			System.out.print(num + " = ");
 			ArrayList<Integer> fibs = new ArrayList<Integer>();
 			fibs.add(1);fibs.add(2);
 			int n = 0,sum = 1;
