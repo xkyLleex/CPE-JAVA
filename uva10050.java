@@ -10,10 +10,10 @@ public class uva10050 {
 			for(int i=0;i<party.length;i++)
 				party[i] = in.nextInt();
 			int sum = 0;
-			for(int i=0;i<=days;i++){//0 = sunday
-				if(i % 5 != 0 && i % 6 != 0){
+			for(int i=1;i<=days;i++){//0 = sunday
+				if((i+1) % 7 != 0 && i % 7 != 0){
 					for(int h=0;h<party.length;h++){
-						if((i+1) % party[h] == 0){
+						if(i % party[h] == 0){
 							sum += 1;
 							break;
 						}
