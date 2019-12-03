@@ -3,18 +3,17 @@ import java.util.Scanner;
 public class uva10190 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		while(true){//on cpe need use in.hasNext()
-			int num1 = in.nextInt(),num2 = in.nextInt(),num3;
-			if(num1 == 0 && num2 == 0)break;//jump out
-			num3 = num1;
+		while(in.hasNext()){
+			int num1 = in.nextInt(),num2 = in.nextInt();
+			int num3 = num1;
 			boolean check = true;
-			while(num3 != 1){
-				if(num3 % num2 != 0){
+			do{
+				if(num2 == 1 || num3 % num2 != 0){
 					check = false;
 					break;
 				}
 				num3 /= num2;
-			}
+			}while(num3 != 1);
 			if(check){
 				while(num1 != 1){
 					System.out.print(num1 + " ");
