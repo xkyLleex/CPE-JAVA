@@ -12,12 +12,14 @@
 while(true){//on cpe need use in.hasNext()
   int num = in.nextInt();
   if(num==0)break;//jump out
+  ...
 }
 ```
 > 想使用hasNext()記得替換成：
 ```java
 while(in.hasNext()){
   int num = in.nextInt();
+  ...
 }
 ```     
 如果因此導致錯誤，請別怪我😭
