@@ -8,8 +8,6 @@ public class uva10008 {
 		for(int i=0;i<String_line.length;i++)
 			String_line[i] = in.nextLine();
 		int charcount[] = new int[26];//a-z 0-25
-		for(int i=0;i<26;i++)
-			charcount[i] = 0;
 		int bignum = 0;
 		for(int i=0;i<String_line.length;i++){
 			for(int j=0;j<String_line[i].length();j++){
