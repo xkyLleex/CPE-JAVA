@@ -1,38 +1,30 @@
 import java.util.Scanner;
 
 public class uva10235 {
-
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		while(true) {//on cpe need use in.hasNext()
-			String num = in.next();
+		while(true){//on cpe need use in.hasNext()
+			String num = in.next(),mun = "";
 			if(num == "")break;//jump out
-			String mun = "";
-			int check = 0;//0-emirp 1-prime 2-not prime
-			for(int i=0;i<num.length();i++) 
-				mun += num.charAt(num.length()-i-1);
-			if(Integer.parseInt(num) != Integer.parseInt(mun)) {
-				for(int i=2;i<Integer.parseInt(mun);i++) {
-					if(Integer.parseInt(mun) % i == 0) {
-						check = 1;
-						break;
-					}
-				}
-			}else
-				check = 1;
-			for(int i=2;i<Integer.parseInt(num);i++) {
-				if(Integer.parseInt(num) % i == 0) {
-					check = 2;
-					break;
-				}
-			}
-			if(check == 0)
+			boolean prime = false,emirp = false;
+			prime = prime(Integer.parseInt(num));
+			for(int i=num.length()-1;i>=0;i--)
+				mun += num.charAt(i);
+			emirp = (Integer.parseInt(num) == Integer.parseInt(mun))?false:prime(Integer.parseInt(mun));
+			if(prime && emirp)
 				System.out.println(num + " is emirp.");
-			else if(check == 1)
+			else if(prime && !emirp)
 				System.out.println(num + " is prime.");
 			else
 				System.out.println(num + " is not prime.");
 		}
 		in.close();
+	}
+	public static boolean prime(int num){
+		if(num != 2 && num % 2 == 0)return false;
+		for(int i=3;i<num;i+=2)
+			if(num % i == 0)
+				return false;
+		return true;
 	}
 }
