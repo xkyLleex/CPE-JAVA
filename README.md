@@ -5,7 +5,7 @@
 有些題目是要使用Scanner的hasNext()來判斷是否輸出！     
 在這裡的程式只要是有用到hasNext()，一律變成用某種方式來結束程式。      
 如要使用hasNext()請記得把true替換，本人都有註解在旁邊。   
-詳情請至上方Issue查看
+詳情請至上方[Issue](https://github.com/xkyLleex/CPE-JAVA/issues/1)查看
                   
 ## 問題-Questions
 if has anything questions,please leave a issues.    
