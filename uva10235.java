@@ -10,7 +10,7 @@ public class uva10235 {
 			prime = prime(Integer.parseInt(num));
 			for(int i=num.length()-1;i>=0;i--)
 				mun += num.charAt(i);
-			emirp = (Integer.parseInt(num) == Integer.parseInt(mun))?false:prime(Integer.parseInt(mun));
+			emirp = (num.equals(mun))?false:prime(Integer.parseInt(mun));
 			if(prime && emirp)
 				System.out.println(num + " is emirp.");
 			else if(prime && !emirp)
