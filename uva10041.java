@@ -3,31 +3,30 @@ import java.util.*;
 public class uva10041{
     public static void main(String[] args) {
         try{
-            int a,b;
-            Scanner in=new Scanner(System.in);
-            a=in.nextInt();
-            for(int i=0;i<a;i++){
-            	b = in.nextInt();
-            	int numlist[] = new int[b];
-            	for(int j=0;j<b;j++)
-            		numlist[j] = in.nextInt();
-            	int sum = 0;
-            	for(int j=0;j<b;j++){
-            		int sumbefore = 0;
-            		for(int k=0;k<b;k++){
-            			if(j==k)continue;
-            			sumbefore += Math.abs(numlist[j]-numlist[k]); 
+            Scanner sc = new Scanner(System.in);
+            int count = sc.nextInt();
+            while((count--)>0){
+            	int numlist [] = new int[sc.nextInt()];
+            	for(int i=0;i<numlist.length;i++)
+            		numlist[i] = sc.nextInt();
+            	int min = 0,num = 0;
+            	for(int i=0;i<numlist.length;i++){
+            		int sum = 0;
+            		for(int j=0;j<numlist.length;j++){
+            			if(i==j)continue;
+            			sum += Math.abs(numlist[i]-numlist[j]);
             		}
-            		if(sum==0)
-            			sum = sumbefore;
-            		if(sumbefore < sum)
-            			sum = sumbefore;
+            		if(i==0)min=sum;
+            		if(min > sum){
+            			min = sum;
+            			num = i;
+            		}
             	}
-            	System.out.println(sum);
+            	System.out.println(min);
             }
-            in.close();
+            sc.close();
         }catch(Exception e){
-            System.out.println("Input error!");
+            System.out.println(e);
         }
     }
 };
