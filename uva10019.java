@@ -2,31 +2,22 @@ import java.util.Scanner;
 
 public class uva10019 {
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		int count = in.nextInt();
-		for(int cases = 0;cases < count;cases++) {
-			int decbin = in.nextInt();
-			System.out.print(dectrans(decbin) + " ");
-			int hexbin = 0,hex = 1;
-			while(decbin > 0) {
-				if(decbin % 10 != 0) 
-					hexbin += (decbin % 10) * hex;
-				decbin /= 10;
-				hex *= 16;
-			}
-			System.out.println(dectrans(hexbin));
+		Scanner in=new Scanner(System.in);
+		int cases = in.nextInt();
+		while((cases--)>0){
+			int num = in.nextInt();
+			System.out.println(dectobin(num) + " " + dectobin(Integer.parseInt(num+"",16)));
 		}
 		in.close();
 	}
-	public static int dectrans(int num) {
-		int out = 0;
-		while(num > 0) {
-			if(num % 2 == 1)
-				out++;
-			num /= 2;
-		}
-		return out;
-	}
+	public static int dectobin(int num){
+    	int sum = 0;
+    	while(num != 0){
+    		if(num % 2 != 0)sum++;
+    		num /= 2;
+    	}
+    	return sum;
+    }
 }
 /*
 265
